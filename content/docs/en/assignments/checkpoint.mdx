@@ -1,0 +1,77 @@
+---
+title: 'Assignment 2 - Checkpoint'
+description: 'Checkpoint - basic functionality, OOP principles, Unit tests'
+icon: CircleCheck
+---
+
+# Assignment 2 - Checkpoint
+
+<Callout type='warn'>**Submission deadline: 29.03.2026**</Callout>
+
+## Assignment Tasks
+
+### 1. Basic Functionality Implementation
+
+Implement basic game functionality according to the project intent.
+
+<Callout type='info'>
+    For functional requirements, you can also use Jira, Trello, or other task
+    management tools.
+</Callout>
+
+### 2. JUnit Tests
+
+Create **3-4 JUnit tests** for some methods.
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class GameEntityTest {
+    @Test
+    void testEntityCreation() {
+        Enemy enemy = new Enemy("Goblin", 100);
+        assertNotNull(enemy);
+        assertEquals("Goblin", enemy.getName());
+        assertEquals(100, enemy.getHealth());
+    }
+}
+```
+
+### 3. Commits
+
+Have at least **2 commits/week** since specification.
+
+### 4. OOP Principles Declaration
+
+Declare the use of the following principles:
+
+- ✅ Generalization
+- ✅ Inheritance
+- ✅ Polymorphism (compile-time and run-time)
+- ✅ Overloading
+- ✅ Overriding
+
+<Callout type='warn'>
+    Usage must be documented and clearly linked to code - screenshot of specific
+    code section of sufficient scope to make the principle clearly identifiable.
+</Callout>
+
+## Documentation Must Include
+
+1. ✅ Class diagram
+2. ✅ OOP principles examples with code links
+3. ✅ Description of 3-4 Unit tests
+4. ✅ Project presentation
+
+## Grading
+
+| Criterion  | Points       |
+| ---------- | ------------ |
+| Checkpoint | **5 points** |
+
+## What to Submit
+
+- 📁 Code
+- 📊 Presentation
+- 📄 Document

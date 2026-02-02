@@ -1,0 +1,9 @@
+{
+    "title": "Zadanie",
+    "icon": "FileCode",
+    "pages": [
+        "specification",
+        "checkpoint",
+        "final"
+    ]
+}

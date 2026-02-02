@@ -1,0 +1,16 @@
+{
+    "title": "Documentation",
+    "root": true,
+    "pages": [
+        "---General---",
+        "index",
+        "info",
+        "materials",
+        "grading",
+        "---Content---",
+        "...lectures",
+        "...seminars",
+        "---Assignments---",
+        "...assignments"
+    ]
+}

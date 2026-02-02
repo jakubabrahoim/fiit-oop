@@ -1,0 +1,71 @@
+---
+title: 'Seminar 2 - OOP Concepts'
+description: 'Class, instance, package, method, 4 OOP principles'
+availableFrom: '2026-02-23'
+---
+
+# Seminar 2 - OOP Concepts
+
+## Lecture Topics
+
+### OOP Concepts
+
+- **Class** - template/blueprint for objects
+- **Instance** - concrete object created from a class
+- **Package** - class organization
+- **Method** - function belonging to a class
+
+### 4 OOP Principles
+
+1. **Encapsulation** - hiding implementation details
+2. **Inheritance** - deriving classes
+3. **Polymorphism** - multiple forms
+4. **Abstraction** - simplifying complexity
+
+### Access Modifiers
+
+- `private` - accessible only within the class
+- `public` - accessible from anywhere
+- `protected` - accessible in package and subclasses
+- (default) - accessible only within the package
+
+## Organization
+
+### Admin
+
+- Attendance
+- Project details are in the lecture
+
+<Callout type='info'>
+    **Goal:** It's not about perfect solution, but about understanding.
+</Callout>
+
+## Student Main Activity
+
+1. Creating inheritance hierarchy
+2. Fixing access to `private`
+3. Working with constructors
+
+```java
+public class Animal {
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void bark() {
+        System.out.println(getName() + " says: Woof!");
+    }
+}
+```

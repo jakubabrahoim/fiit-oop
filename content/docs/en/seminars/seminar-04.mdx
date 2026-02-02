@@ -1,0 +1,60 @@
+---
+title: 'Seminar 4 - Design Patterns'
+description: 'Singleton, Observer, Strategy, Decorator'
+availableFrom: '2026-03-09'
+---
+
+# Seminar 4 - Design Patterns
+
+## Lecture Topics
+
+### Design Patterns
+
+#### Singleton
+
+- Private constructor
+- Single instance in the entire application
+
+```java
+public class GameManager {
+    private static GameManager instance;
+
+    private GameManager() {}
+
+    public static synchronized GameManager getInstance() {
+        if (instance == null) {
+            instance = new GameManager();
+        }
+        return instance;
+    }
+}
+```
+
+#### Observer
+
+- Notification about changes
+- Publisher-Subscriber pattern
+
+#### Strategy
+
+- Algorithm selection at runtime
+- Encapsulation of algorithms
+
+#### Decorator
+
+- Extending functionality without inheritance
+- Wrapping objects
+
+### When to use `static` and `synchronized`
+
+- `static` - shared between all instances
+- `synchronized` - thread-safe access
+
+## Student Main Activity
+
+1. Implementing patterns in code
+2. Applying OOP principles to game logic
+
+## Exercise
+
+Implement Singleton for game state management and Observer for score change notifications.

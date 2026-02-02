@@ -1,0 +1,71 @@
+---
+title: 'Cvičenie 2 - OOP pojmy'
+description: 'Trieda, inštancia, balík, metóda, 4 princípy OOP'
+availableFrom: '2026-02-23'
+---
+
+# Cvičenie 2 - OOP pojmy
+
+## Čo bolo na prednáške
+
+### OOP pojmy
+
+- **Trieda** - šablóna/blueprint pre objekty
+- **Inštancia** - konkrétny objekt vytvorený z triedy
+- **Balík** (package) - organizácia tried
+- **Metóda** - funkcia patriaca triede
+
+### 4 princípy OOP
+
+1. **Enkapsulácia** - skrytie implementačných detailov
+2. **Dedenie** - odvodzovanie tried
+3. **Polymorfizmus** - viacero foriem
+4. **Abstrakcia** - zjednodušenie komplexnosti
+
+### Modifikátory prístupu
+
+- `private` - prístupné len v rámci triedy
+- `public` - prístupné odkiaľkoľvek
+- `protected` - prístupné v balíku a podtriedach
+- (default) - prístupné len v rámci balíka
+
+## Organizačné
+
+### Admin
+
+- Dochádzka
+- Detaily projektu sú na prednáške
+
+<Callout type='info'>
+    **Cieľ:** Nejde o dokonalé riešenie, ale o pochopenie.
+</Callout>
+
+## Hlavná aktivita študentov
+
+1. Vytvorenie hierarchie dedenia
+2. Oprava prístupov na `private`
+3. Práca s konštruktorom
+
+```java
+public class Animal {
+    private String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+public class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void bark() {
+        System.out.println(getName() + " says: Woof!");
+    }
+}
+```

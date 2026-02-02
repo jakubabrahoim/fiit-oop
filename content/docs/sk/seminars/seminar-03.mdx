@@ -1,0 +1,61 @@
+---
+title: 'Cvičenie 3 - Feedback & Rozhrania'
+description: 'Interface vs. abstraktná trieda, Object.toString(), navigácia v IDE'
+availableFrom: '2026-03-02'
+---
+
+# Cvičenie 3 - Feedback & Rozhrania
+
+## Čo bolo na prednáške
+
+### Rozhrania (Interfaces)
+
+- **Interface** - definuje kontrakt, čo trieda musí implementovať
+- **Abstraktná trieda** - môže obsahovať implementáciu aj abstraktné metódy
+
+### Porovnanie Interface vs. Abstraktná trieda
+
+| Interface                                  | Abstraktná trieda               |
+| ------------------------------------------ | ------------------------------- |
+| Len signatúry metód (od Java 8 aj default) | Môže mať implementáciu          |
+| Trieda môže implementovať viacero          | Trieda môže dediť len od jednej |
+| Nemá konštruktor                           | Má konštruktor                  |
+| Všetky metódy sú public                    | Môže mať rôzne modifikátory     |
+
+### Object.toString()
+
+- Každá trieda dedí od `Object`
+- Prekrytie `toString()` pre lepší výpis
+
+```java
+@Override
+public String toString() {
+    return "Player{name='" + name + "', score=" + score + "}";
+}
+```
+
+### Navigácia v IDE
+
+- **Ctrl+klik** - prejsť na definíciu
+- **Ctrl+B** - prejsť na definíciu
+- **Ctrl+Alt+B** - prejsť na implementáciu
+
+### Soft-skills
+
+- Ako dávať spätnú väzbu
+
+## Organizačné
+
+### Termín
+
+<Callout type='warn'>V nedeľu sa odovzdáva zadanie (špecifikácia).</Callout>
+
+### Ponuka
+
+- Konzultácie sú k dispozícii
+
+## Hlavná aktivita študentov
+
+1. Diskusia o nápadoch
+2. Tvorba Lo-fi náčrtu (texty, UI elementy)
+3. Vyplnenie dokumentu k projektu

@@ -1,0 +1,60 @@
+---
+title: 'Cvičenie 4 - Design Patterns'
+description: 'Singleton, Observer, Strategy, Decorator'
+availableFrom: '2026-03-09'
+---
+
+# Cvičenie 4 - Design Patterns
+
+## Čo bolo na prednáške
+
+### Návrhové vzory (Design Patterns)
+
+#### Singleton
+
+- Privátny konštruktor
+- Jedna inštancia v celej aplikácii
+
+```java
+public class GameManager {
+    private static GameManager instance;
+
+    private GameManager() {}
+
+    public static synchronized GameManager getInstance() {
+        if (instance == null) {
+            instance = new GameManager();
+        }
+        return instance;
+    }
+}
+```
+
+#### Observer
+
+- Notifikácia o zmenách
+- Publisher-Subscriber vzor
+
+#### Strategy
+
+- Výber algoritmu za behu
+- Zapuzdrenie algoritmov
+
+#### Decorator
+
+- Rozšírenie funkcionality bez dedenia
+- Wrapping objektov
+
+### Kedy použiť `static` a `synchronized`
+
+- `static` - zdieľané medzi všetkými inštanciami
+- `synchronized` - thread-safe prístup
+
+## Hlavná aktivita študentov
+
+1. Implementácia vzorov do kódu
+2. Aplikácia OOP princípov na hernú logiku
+
+## Cvičenie
+
+Implementujte Singleton pre správu herného stavu a Observer pre notifikáciu zmien skóre.

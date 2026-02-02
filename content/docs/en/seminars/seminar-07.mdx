@@ -1,0 +1,76 @@
+---
+title: 'Seminar 7 - MVC & Refactoring'
+description: 'Shotgun Surgery, Refused Bequest, MVC architecture'
+availableFrom: '2026-03-30'
+---
+
+# Seminar 7 - MVC & Refactoring
+
+## Lecture Topics
+
+### Code Smells
+
+#### Shotgun Surgery
+
+- One change requires modifications in many places
+- Solution: consolidate related logic
+
+#### Refused Bequest
+
+- Subclass doesn't use parent class methods
+- Solution: reconsider inheritance hierarchy
+
+### Switch vs. Polymorphism
+
+**Bad example:**
+
+```java
+switch (enemyType) {
+    case "goblin": damage = 10; break;
+    case "dragon": damage = 50; break;
+    case "skeleton": damage = 15; break;
+}
+```
+
+**Good example:**
+
+```java
+interface Enemy {
+    int getDamage();
+}
+
+class Goblin implements Enemy {
+    public int getDamage() { return 10; }
+}
+
+class Dragon implements Enemy {
+    public int getDamage() { return 50; }
+}
+```
+
+### MVC Architecture
+
+```
+┌─────────┐     ┌────────────┐     ┌──────┐
+│  View   │────▶│ Controller │────▶│Model │
+└─────────┘     └────────────┘     └──────┘
+     ▲                                  │
+     └──────────────────────────────────┘
+```
+
+## Organization
+
+### Deadline
+
+<Callout type='warn'>
+    Submission by Sunday (fixed assignment - checkpoint).
+</Callout>
+
+### Admin
+
+- Check commit quality
+
+## Student Main Activity
+
+1. CRUD operations implementation
+2. Splitting code into Model-View-Controller

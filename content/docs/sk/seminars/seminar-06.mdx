@@ -1,0 +1,71 @@
+---
+title: 'Cvičenie 6 - Code Quality & Testy'
+description: 'Code Smells, Unit Testy, úvod do MVC'
+availableFrom: '2026-03-23'
+---
+
+# Cvičenie 6 - Code Quality & Testy
+
+## Čo bolo na prednáške
+
+### Code Smells
+
+#### Bloaters
+
+- Príliš veľké triedy alebo metódy
+- Ťažko sa čítajú a udržiavajú
+
+#### Long Method
+
+- Metóda robí príliš veľa vecí
+- Rozdeliť na menšie metódy
+
+#### Primitive Obsession
+
+- Nadmerné používanie primitívnych typov
+- Vytvoriť vlastné triedy
+
+### Unit Testy
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class PlayerTest {
+    @Test
+    void testAddScore() {
+        Player player = new Player("Test");
+        player.addScore(10);
+        assertEquals(10, player.getScore());
+    }
+
+    @Test
+    void testScoreCannotBeNegative() {
+        Player player = new Player("Test");
+        player.addScore(-5);
+        assertEquals(0, player.getScore());
+    }
+}
+```
+
+### Úvod do MVC
+
+- **Model** - dáta a logika
+- **View** - zobrazenie
+- **Controller** - spracovanie vstupov
+
+## Organizačné
+
+### GitHub
+
+- Kontrola repozitárov
+
+### Info
+
+- Nový systém hodnotenia cez Code Smells feedback
+
+## Hlavná aktivita študentov
+
+1. Refaktoring zlého kódu
+2. Tvorba Test Cases
+3. Prepojenie GUI a logiky

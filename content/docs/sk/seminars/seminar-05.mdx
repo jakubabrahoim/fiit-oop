@@ -1,0 +1,60 @@
+---
+title: 'Cvičenie 5 - GUI & Plánovanie'
+description: 'Java Swing základy, metodika Shape Up'
+availableFrom: '2026-03-16'
+---
+
+# Cvičenie 5 - GUI & Plánovanie
+
+## Čo bolo na prednáške
+
+### Java Swing (základy)
+
+- Grafické používateľské rozhranie
+- Komponenty: JFrame, JPanel, JButton, JLabel
+- Layout managers
+
+```java
+import javax.swing.*;
+import java.awt.*;
+
+public class GameWindow extends JFrame {
+    public GameWindow() {
+        setTitle("Moja Hra");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+
+        JButton startButton = new JButton("Štart");
+        panel.add(startButton, BorderLayout.SOUTH);
+
+        add(panel);
+        setVisible(true);
+    }
+}
+```
+
+### Metodika Shape Up
+
+- Rozdelenie práce
+- Fixed time, variable scope
+- Betting table
+
+## Organizačné
+
+### Diskusia
+
+- Spätná väzba k nápadom v skupinkách
+- Kontrola rozsahu projektu
+
+## Hlavná aktivita študentov
+
+1. **Tutorial: Build UI using Swing**
+2. Inštalácia Swingu (je súčasťou JDK)
+3. Spísanie úloh a prechodov v aplikácii
+
+## Praktické cvičenie
+
+Vytvorte základné okno pre vašu hru s menu a hernou plochou.

@@ -1,0 +1,86 @@
+---
+title: 'Zadanie 3 - Finálne odovzdanie'
+description: 'Finálne odovzdanie projektu - kompletná implementácia'
+icon: Trophy
+---
+
+# Zadanie 3 - Finálne odovzdanie
+
+<Callout type='warn'>**Termín odovzdania: 26.04.2026**</Callout>
+
+## Úloha v rámci zadania
+
+### Commity
+
+Mať v rámci projektu spravené **každý týždeň v priemere aspoň 2 commity/týždeň**.
+
+<Callout type='info'>
+    Je dovolené vynechať za celý semester jeden týždeň.
+</Callout>
+
+## Nutné podmienky
+
+Projekt **musí** obsahovať:
+
+| Podmienka           | Popis                                                                                                            |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| ✅ OOP princípy     | Generalizácia, dedenie, polymorfizmus (run-time, compile-time), preťaženie, prekonanie, enkapsulácia, abstrakcia |
+| ✅ Jednotkové testy | Pokrytie na **80%**                                                                                              |
+| ✅ Rozhrania        | Projekt musí obsahovať interface(s)                                                                              |
+| ✅ JavaDoc          | Anotácie v kóde                                                                                                  |
+
+## Ďalšie podmienky (bonusové)
+
+Projekt **môže** obsahovať:
+
+| Podmienka                         | Popis                               |
+| --------------------------------- | ----------------------------------- |
+| 🎯 Návrhové/architektonické vzory | Singleton, Observer, Strategy, atď. |
+| 🎯 Loggovanie činností            | Použitie loggeru                    |
+| 🎯 Vlastné výnimky                | Implementácia custom exceptions     |
+| 🎯 GUI                            | Grafické používateľské rozhranie    |
+| 🎯 Viacvláknovosť                 | Použitie threads                    |
+| 🎯 Generickosť                    | Generické triedy vo vlastnom kóde   |
+
+## Príklad JavaDoc
+
+```java
+/**
+ * Reprezentuje hráča v hre.
+ *
+ * @author Meno Priezvisko
+ * @version 1.0
+ */
+public class Player {
+
+    /**
+     * Pridá body k skóre hráča.
+     *
+     * @param points počet bodov na pridanie
+     * @throws IllegalArgumentException ak je points záporné
+     */
+    public void addScore(int points) {
+        if (points < 0) {
+            throw new IllegalArgumentException("Body nemôžu byť záporné");
+        }
+        this.score += points;
+    }
+}
+```
+
+## Čo má obsahovať odovzdanie
+
+- 📁 **Kód** - kompletný zdrojový kód
+- 📊 **Prezentácia** - prezentácia projektu
+- 📄 **Dokumentácia** - technická dokumentácia
+- 🧪 **Testy** - jednotkové testy s 80% pokrytím
+
+## Hodnotenie
+
+| Kritérium          | Body         |
+| ------------------ | ------------ |
+| Finálne odovzdanie | **20 bodov** |
+
+## Prezentácia
+
+Prezentácie projektov prebiehajú na cvičeniach 9-12.

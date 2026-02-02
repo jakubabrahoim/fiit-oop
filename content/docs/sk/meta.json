@@ -1,0 +1,16 @@
+{
+    "title": "Dokumentácia",
+    "root": true,
+    "pages": [
+        "---Všeobecné---",
+        "index",
+        "info",
+        "materials",
+        "grading",
+        "---Obsah---",
+        "...lectures",
+        "...seminars",
+        "---Zadanie---",
+        "...assignments"
+    ]
+}

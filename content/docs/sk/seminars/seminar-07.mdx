@@ -1,0 +1,76 @@
+---
+title: 'Cvičenie 7 - MVC & Refaktoring'
+description: 'Shotgun Surgery, Refused Bequest, MVC architektúra'
+availableFrom: '2026-03-30'
+---
+
+# Cvičenie 7 - MVC & Refaktoring
+
+## Čo bolo na prednáške
+
+### Code Smells
+
+#### Shotgun Surgery
+
+- Jedna zmena vyžaduje úpravy na mnohých miestach
+- Riešenie: konsolidácia súvisiacej logiky
+
+#### Refused Bequest
+
+- Podtrieda nepoužíva metódy rodičovskej triedy
+- Riešenie: prehodnotiť hierarchiu dedenia
+
+### Switch vs. Polymorfizmus
+
+**Zlý príklad:**
+
+```java
+switch (enemyType) {
+    case "goblin": damage = 10; break;
+    case "dragon": damage = 50; break;
+    case "skeleton": damage = 15; break;
+}
+```
+
+**Dobrý príklad:**
+
+```java
+interface Enemy {
+    int getDamage();
+}
+
+class Goblin implements Enemy {
+    public int getDamage() { return 10; }
+}
+
+class Dragon implements Enemy {
+    public int getDamage() { return 50; }
+}
+```
+
+### MVC architektúra
+
+```
+┌─────────┐     ┌────────────┐     ┌──────┐
+│  View   │────▶│ Controller │────▶│Model │
+└─────────┘     └────────────┘     └──────┘
+     ▲                                  │
+     └──────────────────────────────────┘
+```
+
+## Organizačné
+
+### Termín
+
+<Callout type='warn'>
+    Odovzdanie do nedele (opravené zadanie - checkpoint).
+</Callout>
+
+### Admin
+
+- Skontrolovať kvalitu commitov
+
+## Hlavná aktivita študentov
+
+1. Implementácia CRUD operácií
+2. Rozdelenie kódu na Model-View-Controller

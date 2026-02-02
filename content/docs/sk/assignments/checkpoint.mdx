@@ -1,0 +1,78 @@
+---
+title: 'Zadanie 2 - Checkpoint'
+description: 'Checkpoint - základná funkcionalita, OOP princípy, Unit testy'
+icon: CircleCheck
+---
+
+# Zadanie 2 - Checkpoint
+
+<Callout type='warn'>**Termín odovzdania: 29.03.2026**</Callout>
+
+## Úloha v rámci zadania
+
+### 1. Implementácia základnej funkcionality
+
+Implementovať základnú funkcionalitu hry podľa zámeru projektu.
+
+<Callout type='info'>
+    Na funkcionálne požiadavky môžete použiť aj Jiru, Trello, alebo iný nástroj
+    na správu úloh.
+</Callout>
+
+### 2. JUnit testy
+
+Mať spravené **3-4 JUnit testy** pre niektoré metódy.
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class GameEntityTest {
+    @Test
+    void testEntityCreation() {
+        Enemy enemy = new Enemy("Goblin", 100);
+        assertNotNull(enemy);
+        assertEquals("Goblin", enemy.getName());
+        assertEquals(100, enemy.getHealth());
+    }
+}
+```
+
+### 3. Commity
+
+Mať od špecifikácie spravené **aspoň 2 commity/týždeň**.
+
+### 4. Deklarácia použitých OOP princípov
+
+Deklarujte použitie nasledujúcich princípov:
+
+- ✅ Generalizácia
+- ✅ Dedenie
+- ✅ Polymorfizmus (compile-time aj run-time)
+- ✅ Preťaženie (overloading)
+- ✅ Prekonanie (overriding)
+
+<Callout type='warn'>
+    Použitie musí byť uvedené v dokumentácii a jednoznačne prepojené s kódom -
+    screenshot konkrétnej časti kódu takého rozsahu, aby bol princíp jednoznačne
+    identifikovateľný.
+</Callout>
+
+## Dokumentácia musí obsahovať
+
+1. ✅ Diagram tried
+2. ✅ Ukážky OOP princípov s prepojením na kód
+3. ✅ Popis 3-4 Unit testov
+4. ✅ Prezentácia projektu
+
+## Hodnotenie
+
+| Kritérium  | Body        |
+| ---------- | ----------- |
+| Checkpoint | **5 bodov** |
+
+## Čo má obsahovať odovzdanie
+
+- 📁 Kód
+- 📊 Prezentácia
+- 📄 Dokument

@@ -1,0 +1,61 @@
+---
+title: 'Seminar 3 - Feedback & Interfaces'
+description: 'Interface vs. abstract class, Object.toString(), IDE navigation'
+availableFrom: '2026-03-02'
+---
+
+# Seminar 3 - Feedback & Interfaces
+
+## Lecture Topics
+
+### Interfaces
+
+- **Interface** - defines a contract that a class must implement
+- **Abstract class** - can contain implementation and abstract methods
+
+### Comparison: Interface vs. Abstract Class
+
+| Interface                                    | Abstract Class               |
+| -------------------------------------------- | ---------------------------- |
+| Only method signatures (default from Java 8) | Can have implementation      |
+| Class can implement multiple                 | Class can extend only one    |
+| No constructor                               | Has constructor              |
+| All methods are public                       | Can have different modifiers |
+
+### Object.toString()
+
+- Every class extends `Object`
+- Override `toString()` for better output
+
+```java
+@Override
+public String toString() {
+    return "Player{name='" + name + "', score=" + score + "}";
+}
+```
+
+### IDE Navigation
+
+- **Ctrl+click** - go to definition
+- **Ctrl+B** - go to definition
+- **Ctrl+Alt+B** - go to implementation
+
+### Soft-skills
+
+- How to give feedback
+
+## Organization
+
+### Deadline
+
+<Callout type='warn'>Assignment due on Sunday (specification).</Callout>
+
+### Office Hours
+
+- Consultations are available
+
+## Student Main Activity
+
+1. Discussion of ideas
+2. Creating Lo-fi sketch (texts, UI elements)
+3. Filling in project document

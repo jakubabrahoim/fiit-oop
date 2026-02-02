@@ -1,0 +1,71 @@
+---
+title: 'Seminar 6 - Code Quality & Tests'
+description: 'Code Smells, Unit Tests, MVC introduction'
+availableFrom: '2026-03-23'
+---
+
+# Seminar 6 - Code Quality & Tests
+
+## Lecture Topics
+
+### Code Smells
+
+#### Bloaters
+
+- Classes or methods that are too large
+- Hard to read and maintain
+
+#### Long Method
+
+- Method does too many things
+- Split into smaller methods
+
+#### Primitive Obsession
+
+- Excessive use of primitive types
+- Create custom classes
+
+### Unit Tests
+
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class PlayerTest {
+    @Test
+    void testAddScore() {
+        Player player = new Player("Test");
+        player.addScore(10);
+        assertEquals(10, player.getScore());
+    }
+
+    @Test
+    void testScoreCannotBeNegative() {
+        Player player = new Player("Test");
+        player.addScore(-5);
+        assertEquals(0, player.getScore());
+    }
+}
+```
+
+### MVC Introduction
+
+- **Model** - data and logic
+- **View** - display
+- **Controller** - input processing
+
+## Organization
+
+### GitHub
+
+- Repository check
+
+### Info
+
+- New grading system via Code Smells feedback
+
+## Student Main Activity
+
+1. Bad code refactoring
+2. Creating Test Cases
+3. Connecting GUI and logic

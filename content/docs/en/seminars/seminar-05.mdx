@@ -1,0 +1,60 @@
+---
+title: 'Seminar 5 - GUI & Planning'
+description: 'Java Swing basics, Shape Up methodology'
+availableFrom: '2026-03-16'
+---
+
+# Seminar 5 - GUI & Planning
+
+## Lecture Topics
+
+### Java Swing (basics)
+
+- Graphical user interface
+- Components: JFrame, JPanel, JButton, JLabel
+- Layout managers
+
+```java
+import javax.swing.*;
+import java.awt.*;
+
+public class GameWindow extends JFrame {
+    public GameWindow() {
+        setTitle("My Game");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+
+        JButton startButton = new JButton("Start");
+        panel.add(startButton, BorderLayout.SOUTH);
+
+        add(panel);
+        setVisible(true);
+    }
+}
+```
+
+### Shape Up Methodology
+
+- Work division
+- Fixed time, variable scope
+- Betting table
+
+## Organization
+
+### Discussion
+
+- Feedback on ideas in groups
+- Project scope check
+
+## Student Main Activity
+
+1. **Tutorial: Build UI using Swing**
+2. Swing installation (part of JDK)
+3. Listing tasks and transitions in application
+
+## Practical Exercise
+
+Create a basic window for your game with menu and game area.

@@ -11,25 +11,20 @@ import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { LLMCopyButton, ViewOptions } from '@/components/ai/page-actions';
 import { i18n } from '@/lib/i18n';
-import { cookies } from 'next/headers';
 
 interface PageProps {
-    params: Promise<{ slug?: string[] }>;
-}
-
-async function getLocale(): Promise<Locale> {
-    const cookieStore = await cookies();
-    const localeCookie = cookieStore.get('FD_LOCALE')?.value;
-    return (
-        localeCookie && i18n.languages.includes(localeCookie as Locale)
-            ? localeCookie
-            : i18n.defaultLanguage
-    ) as Locale;
+    params: Promise<{ lang: string; slug?: string[] }>;
 }
 
 export default async function Page(props: PageProps) {
     const params = await props.params;
-    const locale = await getLocale();
+    const locale = params.lang as Locale;
+
+    // Validate locale
+    if (!i18n.languages.includes(locale)) {
+        notFound();
+    }
+
     const page = source.getPage(params.slug, locale);
 
     if (!page) notFound();
@@ -66,16 +61,24 @@ export default async function Page(props: PageProps) {
 }
 
 export async function generateStaticParams() {
-    // Filter to only return params for the default locale (sk)
-    // English pages will be accessed via /en/docs/... route
+    // Return params for non-default locales
     return source
         .generateParams()
-        .filter((p) => p.lang === i18n.defaultLanguage);
+        .filter((p) => p.lang !== i18n.defaultLanguage)
+        .map((p) => ({
+            lang: p.lang,
+            slug: p.slug,
+        }));
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const params = await props.params;
-    const locale = await getLocale();
+    const locale = params.lang as Locale;
+
+    if (!i18n.languages.includes(locale)) {
+        notFound();
+    }
+
     const page = source.getPage(params.slug, locale);
 
     if (!page) notFound();
