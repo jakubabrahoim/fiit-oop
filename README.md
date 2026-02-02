@@ -203,8 +203,6 @@ public class Student {
 ```
 ````
 
-```
-
 For more: [Fumadocs MDX Guide](https://fumadocs.dev/docs/mdx)
 
 ---
@@ -213,30 +211,34 @@ For more: [Fumadocs MDX Guide](https://fumadocs.dev/docs/mdx)
 
 Key files and folders:
 
-| Path | Description |
-|------|-------------|
-| `content/docs/` | All course content (MDX files) |
-| `src/app/docs/` | Documentation page routes |
+| Path                   | Description                        |
+| ---------------------- | ---------------------------------- |
+| `content/docs/`        | All course content (MDX files)     |
+| `src/app/docs/`        | Documentation page routes          |
 | `src/app/[lang]/docs/` | Internationalized routes (English) |
-| `src/components/` | Reusable UI components |
-| `src/lib/source.ts` | Content loading configuration |
-| `src/lib/i18n.ts` | Language configuration |
-| `source.config.ts` | Fumadocs MDX configuration |
+| `src/components/`      | Reusable UI components             |
+| `src/lib/source.ts`    | Content loading configuration      |
+| `src/lib/i18n.ts`      | Language configuration             |
+| `source.config.ts`     | Fumadocs MDX configuration         |
 
 ---
 
 ## 🛠️ Common Tasks
 
 ### Change Site Title
+
 Edit `src/lib/layout.shared.tsx` - modify the `title` field.
 
 ### Modify Sidebar Navigation
+
 Edit `content/docs/[sk|en]/meta.json` files to add/remove/reorder pages.
 
 ### Change Color Theme
+
 Edit `src/app/global.css` - modify CSS variables under `:root`.
 
 ### Add New Page Sections
+
 1. Create a new folder in `content/docs/sk/your-section/`
 2. Add `meta.json` with section metadata
 3. Add page files (`.mdx`)
@@ -247,16 +249,19 @@ Edit `src/app/global.css` - modify CSS variables under `:root`.
 ## 🐛 Troubleshooting
 
 ### Content not showing up?
+
 - Check that the file is referenced in `meta.json`
 - Verify frontmatter is valid YAML
 - Restart dev server: `npm run dev`
 
 ### Build errors?
+
 - Check for syntax errors in MDX files
 - Ensure all referenced files exist
 - Verify `meta.json` files are valid JSON
 
 ### i18n issues?
+
 - Ensure content exists in both `sk/` and `en/` folders
 - Check that filenames match exactly
 - Verify both `meta.json` files are updated
@@ -287,4 +292,3 @@ To contribute content:
 ---
 
 **Questions?** Contact the course coordinators or check the [Fumadocs documentation](https://fumadocs.dev).
-```
