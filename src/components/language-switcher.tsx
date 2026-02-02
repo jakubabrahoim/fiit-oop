@@ -1,12 +1,6 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
-import {
-    i18n,
-    type Locale,
-    getLanguageName,
-    getLanguageFlag,
-} from '@/lib/i18n';
+import { type Locale, getLanguageName, getLanguageFlag } from '@/lib/i18n';
 import { cn } from '@/lib/cn';
 
 interface LanguageSwitcherProps {
@@ -14,25 +8,12 @@ interface LanguageSwitcherProps {
 }
 
 export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
-    const pathname = usePathname();
-    const router = useRouter();
-
     const otherLocale = locale === 'sk' ? 'en' : 'sk';
 
     const switchLocale = () => {
-        let newPath: string;
-
-        if (locale === 'sk') {
-            // Switching from Slovak to English: /docs/... -> /en/docs/...
-            newPath = `/en${pathname}`;
-        } else {
-            // Switching from English to Slovak: /en/docs/... -> /docs/...
-            newPath = pathname.replace(/^\/en/, '');
-        }
-
-        // Also set cookie for consistency
         document.cookie = `FD_LOCALE=${otherLocale}; path=/; max-age=31536000`;
-        router.push(newPath);
+        // Reload the page
+        window.location.reload();
     };
 
     return (
@@ -40,7 +21,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
             <button
                 onClick={switchLocale}
                 className={cn(
-                    'flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors',
+                    'flex items-center gap-2 hover:cursor-pointer text-sm text-muted-foreground hover:text-foreground transition-colors',
                     'rounded-md px-2 py-1.5 hover:bg-accent',
                 )}
             >

@@ -4,6 +4,7 @@ export const i18n: I18nConfig = {
     defaultLanguage: 'sk',
     languages: ['sk', 'en'],
     parser: 'dir', // Content is organized by directory: content/docs/sk/, content/docs/en/
+    hideLocale: 'always'
 };
 
 export type Locale = (typeof i18n)['languages'][number];

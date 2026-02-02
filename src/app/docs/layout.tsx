@@ -20,13 +20,7 @@ export default async function Layout({
     ) as Locale;
 
     return (
-        <I18nProvider
-            locale={locale}
-            locales={i18n.languages.map((l) => ({
-                locale: l,
-                name: l === 'sk' ? 'Slovenčina' : 'English',
-            }))}
-        >
+        <I18nProvider locale={locale}>
             <DocsLayout
                 tree={source.getPageTree(locale)}
                 {...baseOptions(locale)}
