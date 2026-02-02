@@ -203,6 +203,24 @@ public class Student {
 ```
 ````
 
+### ⚠️ Important: MDX Formatting
+
+**MDX is sensitive to indentation!** Incorrect indentation can break parsing and cause build errors.
+
+**Best practices:**
+
+- Use consistent indentation (2 or 4 spaces)
+- Don't mix tabs and spaces
+- Be careful with nested lists and code blocks
+- Keep frontmatter flush left (no indentation)
+- Use Prettier for automatic formatting
+
+**Recommended:** Install the [MDX VS Code extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for:
+
+- Syntax highlighting
+- Error detection
+- Better editing experience
+
 For more: [Fumadocs MDX Guide](https://fumadocs.dev/docs/mdx)
 
 ---
