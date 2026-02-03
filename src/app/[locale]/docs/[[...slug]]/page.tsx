@@ -10,35 +10,19 @@ import { getMDXComponents } from '@/mdx-components';
 import type { Metadata } from 'next';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { i18n } from '@/lib/i18n';
-import { cookies } from 'next/headers';
 
 interface PageProps {
-    params: Promise<{ slug?: string[] }>;
-}
-
-async function getLocale(): Promise<Locale> {
-    const cookieStore = await cookies();
-    const localeCookie = cookieStore.get('FD_LOCALE')?.value;
-    return (
-        localeCookie && i18n.languages.includes(localeCookie as Locale)
-            ? localeCookie
-            : i18n.defaultLanguage
-    ) as Locale;
+    params: Promise<{ locale: string; slug?: string[] }>;
 }
 
 export default async function Page(props: PageProps) {
     const params = await props.params;
-    const locale = await getLocale();
+    const locale = params.locale as Locale;
     const page = source.getPage(params.slug, locale);
 
     if (!page) notFound();
 
     const MDX = page.data.body;
-    const gitConfig = {
-        user: 'jakubabrahoim',
-        repo: 'fiit-oop',
-        branch: 'main',
-    };
 
     return (
         <DocsPage toc={page.data.toc} full={page.data.full}>
@@ -61,17 +45,13 @@ export default async function Page(props: PageProps) {
     );
 }
 
-export async function generateStaticParams() {
-    // Filter to only return params for the default locale (sk)
-    // English pages will be accessed via /en/docs/... route
-    return source
-        .generateParams()
-        .filter((p) => p.lang === i18n.defaultLanguage);
+export function generateStaticParams() {
+    return source.generateParams();
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const params = await props.params;
-    const locale = await getLocale();
+    const locale = params.locale as Locale;
     const page = source.getPage(params.slug, locale);
 
     if (!page) notFound();
