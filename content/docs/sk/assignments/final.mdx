@@ -22,58 +22,27 @@ Mať v rámci projektu spravené **každý týždeň v priemere aspoň 2 commity
 
 Projekt **musí** obsahovať:
 
-| Podmienka           | Popis                                                                                                            |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| ✅ OOP princípy     | Generalizácia, dedenie, polymorfizmus (run-time, compile-time), preťaženie, prekonanie, enkapsulácia, abstrakcia |
-| ✅ Jednotkové testy | Pokrytie na **80%**                                                                                              |
-| ✅ Rozhrania        | Projekt musí obsahovať interface(s)                                                                              |
-| ✅ JavaDoc          | Anotácie v kóde                                                                                                  |
+| Podmienka        | Popis                                                                                                            |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
+| OOP princípy     | Generalizácia, dedenie, polymorfizmus (run-time, compile-time), preťaženie, prekonanie, enkapsulácia, abstrakcia |
+| Jednotkové testy | Pokrytie kódu na minimálne **80%**                                                                               |
+| Rozhrania        | Projekt musí obsahovať interface(s)                                                                              |
+| JavaDoc          | Anotácie v kóde                                                                                                  |
 
 ## Ďalšie podmienky (bonusové)
 
+TREBA UPRAVIT
+
 Projekt **môže** obsahovať:
 
-| Podmienka                         | Popis                               |
-| --------------------------------- | ----------------------------------- |
-| 🎯 Návrhové/architektonické vzory | Singleton, Observer, Strategy, atď. |
-| 🎯 Loggovanie činností            | Použitie loggeru                    |
-| 🎯 Vlastné výnimky                | Implementácia custom exceptions     |
-| 🎯 GUI                            | Grafické používateľské rozhranie    |
-| 🎯 Viacvláknovosť                 | Použitie threads                    |
-| 🎯 Generickosť                    | Generické triedy vo vlastnom kóde   |
-
-## Príklad JavaDoc
-
-```java
-/**
- * Reprezentuje hráča v hre.
- *
- * @author Meno Priezvisko
- * @version 1.0
- */
-public class Player {
-
-    /**
-     * Pridá body k skóre hráča.
-     *
-     * @param points počet bodov na pridanie
-     * @throws IllegalArgumentException ak je points záporné
-     */
-    public void addScore(int points) {
-        if (points < 0) {
-            throw new IllegalArgumentException("Body nemôžu byť záporné");
-        }
-        this.score += points;
-    }
-}
-```
-
-## Čo má obsahovať odovzdanie
-
-- 📁 **Kód** - kompletný zdrojový kód
-- 📊 **Prezentácia** - prezentácia projektu (Cvičenia 9-12)
-- 📄 **Dokumentácia** - technická dokumentácia
-- 🧪 **Testy** - jednotkové testy s 80% pokrytím
+| Podmienka                      | Popis                               |
+| ------------------------------ | ----------------------------------- |
+| Návrhové/architektonické vzory | Singleton, Observer, Strategy, atď. |
+| Loggovanie činností            | Použitie loggeru                    |
+| Vlastné výnimky                | Implementácia custom exceptions     |
+| GUI                            | Grafické používateľské rozhranie    |
+| Viacvláknovosť                 | Použitie threads                    |
+| Generickosť                    | Generické triedy vo vlastnom kóde   |
 
 ## Hodnotenie
 
@@ -81,6 +50,11 @@ public class Player {
 | ------------------ | ------------ |
 | Finálne odovzdanie | **20 bodov** |
 
-## Prezentácia
+## Čo má obsahovať odovzdanie
 
-Prezentácie projektov prebiehajú na cvičeniach 9-12.
+Jeden **.zip** súbor (nie .rar) s názvom `MenoPriezvisko_Zadanie3.zip` obsahujúci:
+
+- **Zdrojový kód** - kompletný zdrojový kód implementácie aj testov
+- **Dokumentácia** - kompletnú technickú dokumentáciu vo **formáte PDF**
+
+Každý študent **musí** odprezentovať odozvdanú prácu. Prezentácie projektov prebiehajú na cvičeniach 9-12.
